@@ -8,4 +8,15 @@
 - a **JUnit**  test suite with the method sequences produced by *BEAPI* to create each object in the result set, and
 - a separate **Junit** test suite with tests revealing errors (if these have been found) in the methods used for generation. 
 
+## Getting Started
+
+### Installing BEAPI
+
+To use  *BEAPI* Clone the repository:
+
+```
+git clone https://github.com/mpolitano/bounded-exhaustive-api
+```
+
+
 
