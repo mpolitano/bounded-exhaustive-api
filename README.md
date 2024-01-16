@@ -17,6 +17,20 @@ To use  *BEAPI* Clone the repository:
 ```
 git clone https://github.com/mpolitano/bounded-exhaustive-api
 ```
+. . .
+#### Running NodeCaching Linked List example
 
+. . .
+### Command Line Options
+. . .
+## BEAPI Tutorial
 
+### Using BEAPI
 
+Before running your own examples and start generating new objects and test, keep in mind that BEAPI requires:
+
+- 
+-
+-
+
+## How to build BEAPI from source code
