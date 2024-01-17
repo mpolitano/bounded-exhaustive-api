@@ -1,6 +1,5 @@
 
-<a name="options"></a>
-### Command Line Options
+## Command Line Options
 
 
 | Option    | Description |
@@ -13,3 +12,8 @@
 | --max_BE_iterations = \<number of iterations\ |         |
 | --BEmaxsize = 100								  ||
 | --only-list-methods				|			|
+
+
+* * *
+
+Go back to [Table of Contents](README.md)
