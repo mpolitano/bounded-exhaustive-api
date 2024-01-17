@@ -10,6 +10,17 @@
 
 The BEAPI tool is a command line tool for UNIX-based operating systems. The tool is implemented on top of **Randoop**’s infrastructure, replacing random test sequence generation by bounded exhaustive generation.
 
+# Table of Contents
+
+- [Getting Started](#getting-started)
+    - Installing BEAPI
+    - Running example
+    - Command Line Options
+- BEAPI Tutorial
+    - Using BEAPI 
+- [How to build BEAPI from source code](#how-to-build-beapi-from-source-code)
+
+
 ## Getting Started
 
 To compile and use the BEAPI please use Java 8.
@@ -30,9 +41,7 @@ cd bounded-exhaustive-api
 For your convenience we provide a  binary distribution of beapi tool ready to use in ```lib``` folder (```beapi.jar```). To compile and generate  jar file from source code, also provided in this repository, see section [How to build BEAPI from source code](#compile) below.
 
 
-
-
-#### Running NodeCaching Linked List example
+### Running example
 
 . . .
 ### Command Line Options
