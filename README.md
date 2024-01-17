@@ -22,7 +22,14 @@ To use  *BEAPI* clone the repository:
 ```
 git clone https://github.com/mpolitano/bounded-exhaustive-api
 ```
-. . .
+Move to the folder:
+
+```
+cd bounded-exhaustive-api
+```
+We provide a  binary distribution of beapi tool ready to use in ```lib``` folder (```beapi.jar```)
+
+
 #### Running NodeCaching Linked List example
 
 . . .
