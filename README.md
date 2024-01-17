@@ -47,7 +47,7 @@ Before running your own examples and start generating new objects and test, keep
 -
 -
 ## How to build BEAPI from source code
-## hola
+
 To compile and generate .jar (libs/randoop-all-3.0.6.jar)  we provide a ```Gradle``` wrapper script, gradlew:
 
 ```
