@@ -27,7 +27,7 @@ Move to the folder:
 ```
 cd bounded-exhaustive-api
 ```
-For your convenience we provide a  binary distribution of beapi tool ready to use in ```lib``` folder (```beapi.jar```). To compile and generate  jar file from source code, also provided in this repository, see section **How to build BEAPI from source code** below.
+For your convenience we provide a  binary distribution of beapi tool ready to use in ```lib``` folder (```beapi.jar```). To compile and generate  jar file from source code, also provided in this repository, see section [How to build BEAPI from source code](#compile) below.
 
 
 
@@ -46,6 +46,7 @@ Before running your own examples and start generating new objects and test, keep
 - 
 -
 -
+<a name="compile"></a>
 ## How to build BEAPI from source code
 
 To compile and generate .jar (libs/randoop-all-3.0.6.jar)  we provide a ```Gradle``` wrapper script, gradlew:
