@@ -61,8 +61,8 @@ cd ..
 ```
 
 ```
-./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.clear\(\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" -s=objects.ser
 
+./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.clear\(\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" -s=objects.ser -d=beapi-tests -p=org.apache.commons.collections4.list
 ```
 
 The scope (3  in this example) is defined via two provided configuration files: 
@@ -73,7 +73,10 @@ The scope (3  in this example) is defined via two provided configuration files:
 See [Tutorial](tutorial.md) section for more details on these files
 
 
-Generated tests and objects are saved in ```name of folder```
+Generated tests will be saved in ```beapi-tests/org/apache/commons/collections4/list```
+
+Generated objects will be saved in the specified file: ```objects.ser```
+
 
 * * *
 
