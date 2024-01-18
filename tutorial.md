@@ -59,6 +59,11 @@ ncl.NodeCachingLinkedList.removeIndex\(int\)
 To list the public methods of a class. This can help us correctly write the signature of  builders methods.
 
 
+**Note**: *BEAPI* is able to  automatically identify builders methods for classes under test. For a description about  how to compute builders methods automatically, you can access to the  replication Package of *BEAPI* [here](https://github.com/mpolitano/bounded-exhaustive-api-testgen/blob/main/RUN_BEAPI.md). 
+
+
+
+
 * * *
 
 Go back to [Table of Contents](README.md)
