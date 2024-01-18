@@ -10,6 +10,7 @@
 
 The BEAPI tool is a command line tool for UNIX-based operating systems. The tool is implemented on top of **Randoop**’s infrastructure [0], replacing random test sequence generation by bounded exhaustive generation.
 
+
 # Table of Contents
 
 - [Getting Started](#gettingstarted)
@@ -19,7 +20,7 @@ The BEAPI tool is a command line tool for UNIX-based operating systems. The tool
 - [Tutorial](tutorial.md)
     - [Using BEAPI](tutorial.md) 
 - [How to build BEAPI from source code](buildBEAPI.md)
-
+- [Publications](publications.md)
 
 <a name="gettingStarted"></a>
 ## Getting Started
