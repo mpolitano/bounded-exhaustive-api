@@ -28,7 +28,7 @@
 | -e=\<int\> / --length=\<int\>   		   | Do not generate BE tests with more than <int> statements [default 100] |				  
 
 
-**Note**: 
+**Note**: You should keep in mind that when you set a time limit, maximum number of iterations or maximum number of statements in a test, the test suite you obtain may not be bounded exhaustive, in the sense that you impose other bounds, besides the scope  on the maximun size of generated objects.
 
 * * *
 
