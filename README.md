@@ -79,16 +79,24 @@ To run *BEAPI* for ```NodeCachingLinkedList``` with scope 3:
 
 ```bash
 cd ..
-./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.clear\(\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" -s=objects.ser -d=beapi-tests -p=org.apache.commons.collections4.list
+```
+```bash
+./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m=examples/config_builders/org.apache.commons.collections4.list.NodeCachingLinkedList -s=objects.ser -d=beapi-tests -p=org.apache.commons.collections4.list
+
 ```
 
 The scope (3  in this example) is defined via two provided configuration files: 
 
 - ```literals/literals3.txt```
 - ```properties/scope3.all.canonicalizer.properties```
+ 
+The list of methods that BEAPI uses for bounded exhaustive generation (builder methods) is provided through the file: 
 
-See [Tutorial](tutorial.md) section for more details on these files
+- ```examples/config_builders/org.apache.commons.collections4.list.NodeCachingLinkedList```
 
+See [Tutorial](tutorial.md) section for more details on these files.
+
+#### Results:
 
 Generated tests will be saved in ```./beapi-tests/org/apache/commons/collections4/list```
 
