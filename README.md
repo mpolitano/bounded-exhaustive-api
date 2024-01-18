@@ -8,7 +8,7 @@
 - a **JUnit**  test suite with the method sequences produced by *BEAPI* to create each object in the result set, and
 - a separate **Junit** test suite with tests revealing errors (if these have been found) in the methods used for generation.
 
-The BEAPI tool is a command line tool for UNIX-based operating systems. The tool is implemented on top of **Randoop**’s infrastructure, replacing random test sequence generation by bounded exhaustive generation.
+The BEAPI tool is a command line tool for UNIX-based operating systems. The tool is implemented on top of **Randoop**’s infrastructure [0], replacing random test sequence generation by bounded exhaustive generation.
 
 # Table of Contents
 
@@ -95,6 +95,8 @@ Generated tests will be saved in ```./beapi-tests/org/apache/commons/collections
 Generated objects will be saved in the specified file: ```./objects.ser```
 
 
+* * *
+[0] https://randoop.github.io/randoop/
 * * *
 
 Go back to [Table of Contents](#table-of-contents)

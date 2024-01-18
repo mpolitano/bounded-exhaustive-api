@@ -20,10 +20,11 @@ docker run --platform linux/amd64 -it pli:latest /bin/bash
 ```
 
 
-[0] https://docs.docker.com/desktop/multi-arch/
-
-
 To run the ```NodeCachingLinkedList``` example follow the instruction in [Running example](README.md#running-example)
+
+* * *
+
+[0] https://docs.docker.com/desktop/multi-arch/
 
 * * *
 
