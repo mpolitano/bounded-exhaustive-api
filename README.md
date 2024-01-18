@@ -85,9 +85,9 @@ The scope (3  in this example) is defined via two provided configuration files:
 See [Tutorial](tutorial.md) section for more details on these files
 
 
-Generated tests will be saved in ```beapi-tests/org/apache/commons/collections4/list```
+Generated tests will be saved in ```./beapi-tests/org/apache/commons/collections4/list```
 
-Generated objects will be saved in the specified file: ```objects.ser```
+Generated objects will be saved in the specified file: ```./objects.ser```
 
 
 * * *

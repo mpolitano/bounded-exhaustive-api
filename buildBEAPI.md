@@ -2,24 +2,26 @@
 
 ### Requirements
 
-To compile  BEAPI please use Java 8.
+To compile  BEAPI please use Java 1.8 (BEAPI might not work on newer versions)
 
 ### Builds *BEAPI*
 
-To compile  *BEAPI* clone the repository:
+
+
+1. Clone the repository:
 
 ```
 git clone https://github.com/mpolitano/bounded-exhaustive-api
 
 ```
-Move to the folder:
+2. Move to the folder:
 
 ```
 cd bounded-exhaustive-api
 ```
 
 
-To build and generate BEAPI jar file  we provide a ```Gradle``` wrapper script, gradlew:
+3. To build and generate BEAPI jar file  we provide a ```Gradle``` wrapper script, gradlew:
 
 
 ```
@@ -27,7 +29,7 @@ To build and generate BEAPI jar file  we provide a ```Gradle``` wrapper script, 
 ```
 
 
-The generated jar file (```randoop-all-3.0.6.jar```) is saved  in ```build/libs``` folder
+The generated jar file (```randoop-all-3.0.6.jar```) is saved  in ```./libs``` folder
 
 
 * * *
