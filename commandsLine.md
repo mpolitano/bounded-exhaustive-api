@@ -6,9 +6,9 @@
 | -----------------------------------------|  ------- |
 | -cp=\<classpath\>  / --classpath=\<classpath\> |   (**required**) Path to  binary classes to test. |
 | -c=\<test class\> / --class=\<test class\> | (**required**) The fully-qualified name of a class to test. |
-| -l=\<literals file\> / --literales=\<literals file\> | (**required**) A file containing literal values to be used as inputs to methods invoked during generation. |
-| -b=\<objects bounds file\>  / --bounds=\<objects bounds file\>  |  (**required**)  A file containing the maximum allowed size for objects.      |
-| -m=\<builder methods file\> / --methods=\<builder methods file\>   | A file containing the signatures of the builder methods that BEAPI will use for generation. When this is not passed, all public API methods are used.        |
+| -l=\<literals file\> / --literales=\<literals file\> | (**required**) A file containing literal values to be used as inputs to methods invoked during generation. See [Tutorial](tutorial.md) section for format details. |
+| -b=\<objects bounds file\>  / --bounds=\<objects bounds file\>  |  (**required**)  A file containing the maximum allowed size for objects.  See [Tutorial](tutorial.md) section for format details.    |
+| -m=\<builder methods file\> / --methods=\<builder methods file\>| A file containing the signatures of the builder methods that BEAPI will use for generation. When this is not passed, all public API methods are used. See [Tutorial](tutorial.md) section for format details.|
 | -s=\<serialize objects file\> / --serialize=\<serialize object file\>| Seralize the bounded exhaustive objects to the specified file.        |
 | -d=\<test output directory\> / --output-dir=\<test output directory\>|Name of the directory in which JUnit files should be written. |
 | -p=\<package name\> / --package=\<package name\>| Name of the package for the generated JUnit files.|
