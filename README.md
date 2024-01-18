@@ -53,8 +53,13 @@ docker build -t beapi .
 docker run -it beapi:latest /bin/bash
 ```
 
+For Install in macOS running on Apple CPU follow the instructions [here](appleCPUInstall.md)
+
+
 **Note**: To make a local installation and compile from sources follow the instructions in 
 [How to build BEAPI from source code](buildBEAPI.md) section. 
+
+
 
 
 
