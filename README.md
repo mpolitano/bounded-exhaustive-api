@@ -38,13 +38,15 @@ Move to the folder:
 cd bounded-exhaustive-api
 ```
 
-For your convenience we provide a  binary distribution of beapi tool ready to use in ```lib``` folder (```beapi.jar```). To compile and generate  jar file from source code, also provided in this repository, see section [How to build BEAPI from source code](#compile) below.
+```
+<docker command>
+```
 
 
 <a name="example"></a>
 ### Running example
 
-We provide as an example an implementation of NodeCachingLinkedList in folder ```example```. In order to generate objects and test for a class (or classes) we must to compile it:
+We provide, as an example, an implementation of ``NodeCachingLinkedList`` in folder ```example```. In order to generate objects and test for a class  we must to compile it:
 
 
 ```bash
@@ -59,7 +61,8 @@ cd ..
 ```
 
 ```
-java -cp libs/randoop-all-3.0.6.jar:./examples/bin/ randoop.main.Main gentests --testclass=org.apache.commons.collections4.list.NodeCachingLinkedList --literals-file=literals/literals3.txt --canonicalizer-cfg=properties/scope3.all.canonicalizer.properties --builder-methods="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" --serialize-objects=objects.ser
+./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.clear\(\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" -s=objects.ser
+
 ```
 
 The scope (3  in this example) is defined via two provided configuration files: 
