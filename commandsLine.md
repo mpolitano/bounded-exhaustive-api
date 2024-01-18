@@ -20,12 +20,12 @@
 
 
 | Option   									        | Description |
-| --------------------------------------------- |  ---------- |
-| --timelimit=\<int\>   					        | Maximum number of seconds to spend generating tests|
-| --instance-generics-integer=\<boolean\>.      | Instance generic type parameters only with Integer class [default true]|
-| --instance-object-integer=\<boolean\>         | Instance Object type parameters only with integer values [default true||
-| --max_BE_iterations=\<int\>                 | Maximum number of iterations for inputs generation in BE [default 100] |
-| --BEmaxsize=\<int\>   			               | Do not generate BE tests with more than <int> statements [default 100] |				  
+| ----------------------------------------------|  ---------- |
+| -t=\<int\> / --time=\<int\>   					        | Maximum number of seconds to spend generating tests|
+| -g=\<boolean\> / --generics=\<boolean\>      | Instance generic type parameters only with Integer class [default true]|
+| -o=\<boolean\> / --objects=\<boolean\>       | Instance Object type parameters only with integer values [default true||
+| -i=\<int\>  / --iterations=\<int\>                 | Maximum number of iterations for inputs generation in BE [default 100] |
+| -e=\<int\> / --length=\<int\>   		   | Do not generate BE tests with more than <int> statements [default 100] |				  
 
 
 **Note**: 
