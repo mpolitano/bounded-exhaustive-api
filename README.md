@@ -27,20 +27,35 @@ The BEAPI tool is a command line tool for UNIX-based operating systems. The tool
 <a name="installingbeapi"></a>
 ### Installing BEAPI
 
-To use  *BEAPI* clone the repository:
+To install  *BEAPI* using docker:
+
+1. Clone the repository:
 
 ```
 git clone https://github.com/mpolitano/bounded-exhaustive-api
 ```
-Move to the folder:
+2. Move to the root folder:
 
 ```bash
 cd bounded-exhaustive-api
 ```
 
+3. Build a docker container:
+
 ```
-<docker command>
+docker build -t beapi .
+
 ```
+
+4. Run the docker container:
+
+```
+docker run -it beapi:latest /bin/bash
+```
+
+**Note**: To make a local installation and compile from sources follow the instructions in 
+[How to build BEAPI from source code](buildBEAPI.md) section. 
+
 
 
 <a name="example"></a>
@@ -56,12 +71,9 @@ javac -d ./bin/ org/apache/commons/collections4/list/NodeCachingLinkedList.java
 ```
 To run *BEAPI* for ```NodeCachingLinkedList``` with scope 3:
 
+
 ```bash
 cd ..
-```
-
-```
-
 ./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m="org.apache.commons.collections4.list.NodeCachingLinkedList.<init>\(int\)|org.apache.commons.collections4.list.AbstractLinkedList.add\(java.lang.Integer\)|org.apache.commons.collections4.list.AbstractLinkedList.clear\(\)|org.apache.commons.collections4.list.AbstractLinkedList.remove\(int\)" -s=objects.ser -d=beapi-tests -p=org.apache.commons.collections4.list
 ```
 
