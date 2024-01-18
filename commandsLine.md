@@ -25,8 +25,9 @@
 | -g=\<boolean\> / --generics=\<boolean\>      | Instance generic type parameters only with Integer class [default true]|
 | -o=\<boolean\> / --objects=\<boolean\>       | Instance Object type parameters only with integer values [default true||
 | -i=\<int\>  / --iterations=\<int\>                 | Maximum number of iterations for inputs generation in BE [default 100] |
-| -e=\<int\> / --length=\<int\>   		   | Do not generate BE tests with more than <int> statements [default 100] |				  
-
+| -e=\<int\> / --length=\<int\>   		   | Do not generate BE tests with more than <int> statements [default 100] |
+| -f=NO\|BEALL / --matching=NO\|BEALL      | If set to NO then do not apply *state matching* optimization [default BEALL] |				  
+				  
 
 **Note**: You should keep in mind that when you set a time limit, maximum number of iterations or maximum number of statements in a test, the test suite you obtain may not be bounded exhaustive, in the sense that you impose other bounds, besides the scope  on the maximun size of generated objects.
 
