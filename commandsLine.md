@@ -12,6 +12,7 @@
 | -s=\<serialize objects file\> / --serialize=\<serialize object file\>| Seralize the bounded exhaustive objects to the specified file.        |
 | -d=\<test output directory\> / --output-dir=\<test output directory\>|Name of the directory in which JUnit files should be written. |
 | -p=\<package name\> / --package=\<package name\>| Name of the package for the generated JUnit files.|
+| -a=\<boolean\> / --list-api=\<boolean\>| List public methods and terminate [default false]|
 
 
 ## Fine-tune options
@@ -25,8 +26,6 @@
 | --instance-object-integer=\<true / false\>    |          |
 | --max_BE_iterations = \<number of iterations\ |         |
 | --BEmaxsize = 100								  ||
-| --only-list-methods				|			|
-
 
 
 * * *

@@ -5,7 +5,7 @@
 Before running your own examples and start generating new objects and test, keep in mind that BEAPI requires:
 
 - Compiled target class (or classes) for test case generation,
-- A file containing primitives:
+- A file containing primitives scope:
 
 	When an API method takes a primitive-typed parameter, BEAPI will invoke the method once with each primitive 	value defined in primitive scopes. One may also specify primitive values for primitive types like int, floats,   doubles and strings, by describing their values by extension. We provide some examples in folder ```literals```
  The format of this file is inherited from Randoop:
@@ -50,6 +50,15 @@ ncl.NodeCachingLinkedList.<init>\(\)
 ncl.NodeCachingLinkedList.addLast\(int\)
 ncl.NodeCachingLinkedList.removeIndex\(int\)
 ```
+   
+   We can run:
+```
+./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -a=true
+```
+
+To list the public methods of a class. This can help us correctly write the signature of  builders methods.
+
+
 * * *
 
 Go back to [Table of Contents](README.md)
