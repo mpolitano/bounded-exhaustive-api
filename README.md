@@ -34,7 +34,7 @@ git clone https://github.com/mpolitano/bounded-exhaustive-api
 ```
 Move to the folder:
 
-```
+```bash
 cd bounded-exhaustive-api
 ```
 
@@ -56,7 +56,7 @@ javac -d ./bin/ org/apache/commons/collections4/list/NodeCachingLinkedList.java
 ```
 To run *BEAPI* for ```NodeCachingLinkedList``` with scope 3:
 
-```
+```bash
 cd ..
 ```
 
