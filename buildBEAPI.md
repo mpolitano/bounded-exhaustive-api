@@ -1,12 +1,10 @@
-## How to build BEAPI from source code
+## Build BEAPI from source code
 
 ### Requirements
 
-To compile  BEAPI please use Java 1.8 (BEAPI might not work on newer versions)
+To compile **BEAPI** you need Java 1.8 installed (BEAPI might not work on newer versions)
 
-### Builds *BEAPI*
-
-
+### Compile **BEAPI**
 
 1. Clone the repository:
 

@@ -1,113 +1,86 @@
 # BEAPI Tool: Efficient Bounded Exhaustive Input Generation from Program APIs
 
-*BEAPI* is an efficient bounded exhaustive test generation tool that employs routines from the **API** of the software under test for generation. *BEAPI* solely employs the public methods in the **API** of a class in order to perform bounded exhaustive input generation for the class, **without** the need for a formal specification of valid inputs. 
+**BEAPI** is an efficient bounded exhaustive test generation tool that employs routines from the *API* of the software under test for generation. **BEAPI** solely employs the public methods in the *API* of a class in order to perform bounded exhaustive input generation for the class, **without** the need for a formal specification of valid inputs. 
 
 
-*BEAPI* takes as inputs the target classes for test case generation, a configuration files defining the scopes, and the builder methods for the target class (a sufficient set of builder methods that is, methods from the **API** that by themselves are enough to produce all the feasible objects for the target classes). As outputs, *BEAPI* tool yields:
+**BEAPI** takes as inputs the target classes for test case generation, configuration files defining the scopes, and the methods from the *API* that will be used for generation (*builder methods* in the paper describing **BEAPI** [0]). As outputs, **BEAPI** yields:
 - a bounded exhaustive set of objects,
-- a **JUnit**  test suite with the method sequences produced by *BEAPI* to create each object in the result set, and
+- a **JUnit**  test suite with the method sequences produced by **BEAPI** to create each object in the result set, and
 - a separate **Junit** test suite with tests revealing errors (if these have been found) in the methods used for generation.
 
-The BEAPI tool is a command line tool for UNIX-based operating systems. The tool is implemented on top of **Randoop**’s infrastructure [0], replacing random test sequence generation by bounded exhaustive generation.
+**BEAPI** is a command line tool that runs on a Docker container. The tool is implemented on top of **Randoop**’s infrastructure [1], replacing random test sequence generation by bounded exhaustive generation. For a detailed explanation of the algorithms underlying **BEAPI** read the scientific paper [0].
 
 
 # Table of Contents
 
-- [Getting Started](#gettingstarted)
-    - [Installing BEAPI](#installingbeapi)
-    - [Running example](#example)
-- [Command Line Options](commandsLine.md)
-- [Tutorial](tutorial.md)
-    - [Using BEAPI](tutorial.md) 
-- [How to build BEAPI from source code](buildBEAPI.md)
-- [Publications](publications.md)
+- [Getting Started](#getting-started)
+    - [Installing BEAPI](#installing-beapi)
+    - [Running a simple example](#running-a-simple-example)
+- [Tutorial](TUTORIAL.md)
+- [Command Line Options](OPTIONS.md)
+- [References](#references)
 
-<a name="gettingStarted"></a>
 ## Getting Started
 
-<a name="installingbeapi"></a>
 ### Installing BEAPI
 
-To install  *BEAPI* using docker:
+To install **BEAPI** using docker:
 
 1. Clone the repository:
 
 ```
 git clone https://github.com/mpolitano/bounded-exhaustive-api
-```
-2. Move to the root folder:
-
-```bash
 cd bounded-exhaustive-api
 ```
 
-3. Build a docker container:
+2. Build **BEAPI**'s docker container:
 
 ```
 docker build -t beapi .
-
 ```
 
-4. Run the docker container:
+3. Run the container:
 
 ```
 docker run -it beapi:latest /bin/bash
 ```
 
-For Install in macOS running on Apple CPU follow the instructions [here](appleCPUInstall.md)
+**Note**: To make a local installation and compile from sources follow the instructions [here](ALTERNATIVE_INSTALL.md).
 
 
-**Note**: To make a local installation and compile from sources follow the instructions in 
-[How to build BEAPI from source code](buildBEAPI.md) section. 
+### Running a simple example
 
+1. Compile the `NodeCachingLinkedList` (taken from Apache Commons [2]) java class provided in the `examples` folder.
 
+    ```
+    cd examples
+    mkdir -p ./bin
+    javac -d ./bin/ org/apache/commons/collections4/list/NodeCachingLinkedList.java
+    cd ..
+    ```
+2. Run **BEAPI** to generate tests for the ```NodeCachingLinkedList``` class, using a scope of 3:
 
+    ```
+    ./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m=examples/config_builders/org.apache.commons.collections4.list.NodeCachingLinkedList -s=objects.ser
+    ```
 
+    where, `-cp` defines the classpath, `-c` the target class for test generation, `-l` and `-b` define the scopes (a scope of 3 is defined via the two provided configuration files above), `-m` is a file containing regular expressions for the methods used in the generation, and `-s` is the file where the generated objects will be stored.
 
-<a name="example"></a>
-### Running example
+    The generated tests will be saved in files `RegressionTest0.java` and `RegressionTest.java`, and the objects in `objects.ser`, within the current directory.
 
-We provide, as an example, an implementation of ``NodeCachingLinkedList`` in folder ```example```. In order to generate objects and test for a class  we must to compile it:
+    See the [tutorial](TUTORIAL.md) for an in depth explanation of how to use **BEAPI**, and [this section](OPTIONS.md) for the available configuration options.
 
-
-```bash
-cd examples
-mkdir -p ./bin
-javac -d ./bin/ org/apache/commons/collections4/list/NodeCachingLinkedList.java
-```
-To run *BEAPI* for ```NodeCachingLinkedList``` with scope 3:
-
-
-```bash
-cd ..
-```
-```bash
-./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -m=examples/config_builders/org.apache.commons.collections4.list.NodeCachingLinkedList -s=objects.ser -d=beapi-tests -p=org.apache.commons.collections4.list
-
-```
-
-The scope (3  in this example) is defined via two provided configuration files: 
-
-- ```literals/literals3.txt```
-- ```properties/scope3.all.canonicalizer.properties```
- 
-The list of methods that BEAPI uses for bounded exhaustive generation (builder methods) is provided through the file: 
-
-- ```examples/config_builders/org.apache.commons.collections4.list.NodeCachingLinkedList```
-
-See [Tutorial](tutorial.md) section for more details on these files.
-
-#### Results:
-
-Generated tests will be saved in ```./beapi-tests/org/apache/commons/collections4/list```
-
-Generated objects will be saved in the specified file: ```./objects.ser```
 
 
 * * *
-[0] https://randoop.github.io/randoop/
-* * *
+## References 
 
+[0] M. Politano, V. Bengolea, F. Molina, N. Aguirre, M. Frias, P. Ponzio: Efficient Bounded Exhaustive Input Generation from Program APIs. FASE 2023. 111-132.
+
+[1] https://randoop.github.io/randoop/
+
+[2] https://github.com/apache/commons-collections
+* * *
 Go back to [Table of Contents](#table-of-contents)
 
 
