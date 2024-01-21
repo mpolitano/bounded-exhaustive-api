@@ -1,8 +1,8 @@
 ## Tutorial
 
-To perform test generation BEAPI requires:
+In this section, we provide a step-by-step example to guide you in configuring BEAPI to perform test generation. BEAPI's mandatory parameters are described below. 
 
-**Binaries:** (.class files) of the target class (or classes).
+**Binaries:** A folder with the binaries (.class files) of the target class (or classes) must be provided in the -cp parameter.
 
 **Literals:** A file containing the literals that will be used to instantiate primitive-typed parameters of API methods. The format of the file is inherited from Randoop. For example, to use integer literals 0, 1, and 2 (i.e., to define a scope of 3) set your literals file (using the -l parameter) as follows:
 
