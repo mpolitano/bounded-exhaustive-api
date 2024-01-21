@@ -23,7 +23,7 @@
 | ----------------------------------------------|  ---------- |
 | -t=\<int\> / --time=\<int\>   					        | Maximum number of seconds to spend generating tests. [Default: 10 minutes]|
 | -io=\<boolean\> / --instance-objects-int=\<boolean\>       | Instance object-typed parameters only with integer values. [Default: true||
-| -i=\<int\>  / --iterations=\<int\>                 | Limit on the maximum number of iterations. The number of iterations the tool is performing is displayed in the command line during execution. [Default: 100] |
+| -i=\<int\>  / --iterations=\<int\>                 | Limit on the maximum number of iterations. Iteration numbers are displayed throughout the execution. [Default: 100] |
 | -tl=\<int\> / --test-length=\<int\>   		   | Limit on the maximum number of statements in generated tests. [Default: 100] |
 | -sm=NO / --matching=NO      | Do not use the *state matching* optimization. See [[0]](README.md#references) in [Default: YES] |				  
 

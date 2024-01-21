@@ -1,16 +1,10 @@
 ## Tutorial
 
-### Using BEAPI
+To perform test generation BEAPI requires:
 
-Before running your own examples and start generating new objects and test, keep in mind that BEAPI requires:
+**Binaries:** (.class files) of the target class (or classes).
 
-- Compiled target class (or classes) for test case generation,
-- A file containing primitives scope:
-
-	When an API method takes a primitive-typed parameter, BEAPI will invoke the method once with each primitive 	value defined in primitive scopes. One may also specify primitive values for primitive types like int, floats,   doubles and strings, by describing their values by extension. We provide some examples in folder ```literals```
- The format of this file is inherited from Randoop:
-
-    Literals for ```int``` primitive type (scope 3):
+**Literals:** A file containing the literals that will be used to instantiate primitive-typed parameters of API methods. The format of the file is inherited from Randoop. For example, to use integer literals 0, 1, and 2 (i.e., to define a scope of 3) set your literals file (using the -l parameter) as follows:
 
 ``` 
 START CLASSLITERALS
@@ -23,27 +17,20 @@ int:2
 END CLASSLITERALS
 ```
 
-
-- A file containing objects scope:
-
-  defines the maximum allowed size for objects. For instance, for the case of ```NodeCachingLinkedList``` on the running example, it was defined as 3, thus, method sequences that create lists with more than  3 nodes will be discarded (together with the objects created by the execution of the sequence). 
-   Additionally, options are provided to define the maximum size of the created arrays (``max.array.objects``) and fields that must be omitted when canonicalizing (``omit.fields`` parameter is a Java regular expression). We provide some examples in folder ```properties```
+When an API method takes an integer BEAPI will invoke the method once with each primitive value above. You can also specify literals for other primitive types like int, floats, doubles and strings. We provide additional examples in folder `literals` of this repo.
 
 
-    Object scopes for 3:
-
+**Scope:** A file defining the scopes for the non-primitive typed values (objects). For example, to generate objects with a maximum size of 3, with a maximum array size of 3 set the -b parameter to a file with the following format:
 
 ```
 max.objects=3
 max.array.objects=3
-omit.fields=modCount|ALLOWED_IMBALANCE
+omit.fields=modCount
 ```
 
+For instance, for the `NodeCachingLinkedList` [example](README.md#running-a-simple-example) the scopes above will limit the generation to lists with up to 3 nodes (larger objects will be discarded, together with the tests that created them). The `omit.fields` option defines a Java regular expression that allows one to control the BEAPI's state matching procedure, by discarding fields with names that match the expression in object canonicalization. See [[0]](README.md#references) for details.
 
-- Builder methods:
-
-
-    file containing the signatures of the builder methods that BEAPI will use for generation. For instance, the contents of the file with the signatures of the builders for NodeCachingLinkedList is:
+**Builder methods:** A file containing the signatures of the API methods that BEAPI will use for generation. For instance, the contents of the file for the `NodeCachingLinkedList` [example](README.md#running-a-simple-example) is:
      
 ```
 ncl.NodeCachingLinkedList.<init>\(\)
@@ -51,16 +38,12 @@ ncl.NodeCachingLinkedList.addLast\(int\)
 ncl.NodeCachingLinkedList.removeIndex\(int\)
 ```
    
-   We can run:
+To list the signatures of the public methods in the API of a class we can run BEAPI with `-a=true`. For example:
 ```
 ./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -a=true
 ```
 
-To list the public methods of a class. This can help us correctly write the signature of  builders methods.
-
-
-**Note**: *BEAPI* is able to  automatically identify builders methods for classes under test. For a description about  how to compute builders methods automatically, you can access to the  replication Package of *BEAPI* [here](https://github.com/mpolitano/bounded-exhaustive-api-testgen/blob/main/RUN_BEAPI.md). 
-
+BEAPI will list the methods and terminate. From the results we can manually pick the signatures of the builders methods. We have also defined algorithms to automatically identify builders methods. To run these algorithms refer to the [replication package of BEAPI's paper](https://github.com/mpolitano/bounded-exhaustive-api-testgen/blob/main/RUN_BEAPI.md). 
 
 
 
