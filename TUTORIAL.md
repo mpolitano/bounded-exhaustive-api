@@ -43,7 +43,7 @@ To list the signatures of the public methods in the API of a class we can run BE
 ./run-beapi.sh -cp=./examples/bin/ -c=org.apache.commons.collections4.list.NodeCachingLinkedList -l=literals/literals3.txt -b=properties/scope3.all.canonicalizer.properties -a=true
 ```
 
-BEAPI will list the methods and terminate. From the results we can manually pick the signatures of the builders methods. We have also defined algorithms to automatically identify builders methods. To run these algorithms refer to the [replication package of BEAPI's paper](https://github.com/mpolitano/bounded-exhaustive-api-testgen/blob/main/RUN_BEAPI.md). 
+BEAPI will list the methods and terminate. From the results we can manually pick the signatures of the builders methods. We have also defined algorithms to automatically identify builders methods. To run these algorithms refer to the [replication package of BEAPI's paper](https://github.com/mpolitano/bounded-exhaustive-api-testgen/blob/main/BEAPI_OPT.md#running-automated-builders-identification-last-paragraph-of-section-42). 
 
 
 
