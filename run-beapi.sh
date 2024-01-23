@@ -32,7 +32,7 @@ for i in "$@"; do
       shift
       ;;
     -c=*|--class=*)
-      CLASS=$CLASS" --testclass=${i#*=}"
+      CLASS="${CLASS} --testclass=${i#*=}"
       shift
       ;;
     -l=*|--literals=*)
@@ -95,16 +95,16 @@ for i in "$@"; do
   esac
 done
 
-if [ $CLASSPATH = "" ]; then
+if [ "$CLASSPATH" = "" ]; then
    echo "ERROR: Mandatory argument -cp missing."
 fi
-if [ $CLASS = "" ]; then
+if [ "$CLASS" = "" ]; then
    echo "ERROR: Mandatory argument -c missing."
 fi
-if [ $LITERALS = "" ]; then
+if [ "$LITERALS" = "" ]; then
    echo "ERROR: Mandatory argument -l missing."
 fi
-if [ $BOUNDS = "" ]; then
+if [ "$BOUNDS" = "" ]; then
    echo "ERROR: Mandatory argument -b missing."
 fi
 
