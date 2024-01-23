@@ -25,15 +25,15 @@
 **Note**: **BEAPI** is preconfigured in such way that it will try to generate objects in a bounded-exhaustive manner. However, due to the large number of objects to be generated it might not always terminate fast enough (and it might event not terminate for large scopes and/or complex case studies). Hence, if you want to limit the search so it generates a *partial set of objects* (i.e., not bounded-exhaustive) you can use the options below.
 
 
-* -t=\<int\> / --time=\<int\>: Maximum number of seconds to spend generating tests. [**Default**: 10 minutes]
+* ``-t=<int>`` / ``--time=<int>``: Maximum number of seconds to spend generating tests. [**Default**: 10 minutes]
 
-* -io=\<boolean\> / --instance-objects-int=\<boolean\>: Instance object-typed parameters only with integer values. [Default: true|
+* ``-io=<boolean>`` / ``--instance-objects-int=<boolean>``: Instance object-typed parameters only with integer values. [Default: true|
 
-* -i=\<int\>  / --iterations=\<int\>: Limit on the maximum number of iterations. Iteration numbers are displayed throughout the execution. [**Default**: 100] 
+* ``-i=<int>``  / ``--iterations=<int>``: Limit on the maximum number of iterations. Iteration numbers are displayed throughout the execution. [**Default**: 100] 
 
-* -tl=\<int\> / --test-length=\<int\>: Limit on the maximum number of statements in generated tests. [**Default**: 100] 
+* ``-tl=<int>`` / ``--test-length=<int>``: Limit on the maximum number of statements in generated tests. [**Default**: 100] 
 
-* -sm=NO / --matching=NO: Do not use the *state matching* optimization. See [[0]](README.md#references) in [**Default**: YES]				  
+* ``-sm=NO`` / ``--matching=NO``: Do not use the *state matching* optimization. See [[0]](README.md#references) in [**Default**: YES]				  
 
 * * *
 
