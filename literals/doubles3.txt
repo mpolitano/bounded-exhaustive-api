@@ -1,0 +1,8 @@
+START CLASSLITERALS
+CLASSNAME
+java.lang.Double
+LITERALS
+double:0.0
+double:0.1
+double:0.2
+END CLASSLITERALS

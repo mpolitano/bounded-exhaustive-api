@@ -1,0 +1,18 @@
+START CLASSLITERALS
+CLASSNAME
+java.lang.Float
+LITERALS
+float:0.0
+float:0.33
+float:0.66
+float:1.0
+END CLASSLITERALS
+START CLASSLITERALS
+CLASSNAME
+java.lang.Integer
+LITERALS
+int:0
+int:1
+int:2
+int:3
+END CLASSLITERALS
